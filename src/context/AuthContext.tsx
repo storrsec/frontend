@@ -34,7 +34,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     }
 
     try {
-      const res = await axios.get('http://localhost:4000/api/user/me', {
+      const res = await axios.get('https://backend-sand-tau-62.vercel.app/api/user/me', {
         headers: { Authorization: `Bearer ${token}` },
       });
       setUser(res.data);
@@ -51,7 +51,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   }, []);
 
   const login = async (email: string, password: string) => {
-    const res = await axios.post('http://localhost:4000/api/auth/login', { email, password });
+    const res = await axios.post('https://backend-sand-tau-62.vercel.app/api/auth/login', { email, password });
     const { token } = res.data;
     localStorage.setItem('token', token);
     setLoading(true);
@@ -59,13 +59,13 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   };
 
   const signup = async (name: string, email: string, password: string) => {
-    await axios.post('http://localhost:4000/api/auth/register', { name, email, password });
+    await axios.post('https://backend-sand-tau-62.vercel.app/api/auth/register', { name, email, password });
     await login(email, password); // Auto-login after signup
   };
 
   const loginWithOAuth = async (provider: 'google' | 'apple' | 'facebook') => {
   if (provider === 'google') {
-    window.location.href = 'http://localhost:4000/auth/google';
+    window.location.href = 'https://backend-sand-tau-62.vercel.app/auth/google';
   } else {
     alert(`${provider} login not implemented yet`);
   }
@@ -84,7 +84,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 
     try {
       await axios.post(
-        'http://localhost:4000/api/user/subscribe',
+        'https://backend-sand-tau-62.vercel.app/api/user/subscribe',
         {},
         {
           headers: { Authorization: `Bearer ${token}` },
