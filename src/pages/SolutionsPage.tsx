@@ -8,7 +8,7 @@ import {
 const hero = {
   title: "Fortify Your Future: Elite Cybersecurity for the Modern Enterprise",
   subtitle: "Your business is the target. We make it untouchable.",
-  image: "/images/soluti.jpg",
+  image: "/images/people.jpg",
 };
 
 
