@@ -66,7 +66,7 @@ const educationPlans = [
       "Recognizing simple scams",
       "Interactive games & stories"
     ],
-    image: "", // Kids learning
+    image: "/images/125.jpg", // Kids learning
     cta: "Enroll Explorers",
   },
   {
@@ -97,7 +97,7 @@ const educationPlans = [
       "Introduction to cybersecurity careers",
       "Online reputation management"
     ],
-    image: "",
+    image: "/images/721.jpg",
     cta: "Enroll Leaders",
   },
 ];
